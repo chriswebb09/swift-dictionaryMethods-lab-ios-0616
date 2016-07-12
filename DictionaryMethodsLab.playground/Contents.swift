@@ -13,6 +13,8 @@
  */
 // write your code here
 
+var starWarsHeroes = ["Luke Skywalker", "Princess Leia", "Han Solo", "Rey"]
+
 
 
 
@@ -21,6 +23,7 @@
  */
 // write your code here
 
+var starWarsVillians = ["Darth Vader", "Emperor Palpatine"]
 
 
 
@@ -29,16 +32,14 @@
  */
 // write your code here
 
-
-
-
+var starWarsDroids = ["R2-D2", "C-3PO", "IG-88", "BB-8"]
 /*: question4
  ### 4. Darn! We forgot to add Kylo Ren, the newest _Star Wars_ villain. Add "Kylo Ren" to `starWarsVillains` using the `append()` method.
  */
 // write your code here
 
 
-
+starWarsVillians.append("Kylo Ren")
 
 /*: question5
  ### 5. On second thought, we don't really care that much about IG-88. Remove him from the `starWarsDroids` array using the `removeAtIndex()` method. (What index is "IG-88" at?)
@@ -46,14 +47,13 @@
 // write your code here
 
 
-
-
+starWarsDroids.removeAtIndex(starWarsDroids.indexOf("IG-88")!)
 /*: question6
  ### 6. Excellent! We want to store these arrays in a dictionary. Create a _variable_ dictionary called `starWarsCharacters` with the following keys: "Heroes", "Villains", and "Droids". Assign the appropriate variables that you created in the previous questions to these keys when you initialize the dictionary.
  */
 // write your code here
 
-
+var starWarsCharacters = ["Heroes": starWarsHeroes, "Villains": starWarsVillians, "Droids": starWarsDroids]
 
 
 /*: question7
@@ -62,6 +62,7 @@
 // write your code here
 
 
+var starWarsGangsters = ["Watto", "Jabba the Hutt"]
 
 
 /*: question8
@@ -69,6 +70,7 @@
  */
 // write your code here
 
+starWarsCharacters["Gangsters"] = starWarsGangsters
 
 
 
@@ -78,12 +80,18 @@
 // write your code here
 
 
-
+for (key, value) in starWarsCharacters {
+    print("/(key)")
+}
 
 /*: question10
  ### 10. Just for good measure, print the number of keys in the dictionary to the console using the `count` method. Do you see `4` printed to the console?
  */
 // write your code here
+
+//for (key, value) in starWarsCharacters {
+//    print("/(key.count)")
+//}
 
 
 
@@ -92,7 +100,9 @@
  ### 11. Use an if statement and the dictionary's `isEmpty` property to print "The dictionary is empty!" to the console if it is empty; otherwise, print "There are <Count> items in the dictionary." What do you expect to see in the console? What _do_ you see?
  */
 // write your code here
-
+if starWarsCharacters.isEmpty {
+    print("The dictionary is empty")
+}
 
 
 
@@ -101,6 +111,7 @@
  */
 // write your code here
 
+var starWarsJedi = ["Yoda", "Obi-Wan Kenobi", "Mace Windu"]
 
 
 
@@ -110,13 +121,19 @@
 // write your code here
 
 
+starWarsCharacters.updateValue(starWarsJedi, forKey: "Jedi")
 
 
+
+if starWarsCharacters["Jedi"] == nil {
+    print("Updated Jedi key")
+}
 /*: question14
  ### 14. I can't remember if we added the a key/value pair for "Bounty Hunters" or not. Regardless, let's not worry about them for now. Use the `removeValueForKey()` method to remove "Bounty Hunters" from `starWarsCharacters`. Print the message "Removed Bounty Hunters" if the key was present in the dictionary, or "Bount Hunters did not exist" if it wasn't.
  */
 // write your code here
 
+starWarsCharacters.removeValueForKey("Bounty Hunters")
 
 
 
